@@ -18,3 +18,7 @@ socket.emit('createMessage', {
 }, function(data) {
   console.log('Got it', data);
 });
+
+jQuery('#message-form').on('submit', function(e) {
+  e.preventDefault();
+});
