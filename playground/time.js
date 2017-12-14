@@ -5,4 +5,4 @@ var moment = require('moment');
 // console.log(date.getMonth());
 
 var date = moment();
-console.log(date.format('MMM YYYY'));
+console.log(date.format('MMM Do, YYYY'));
