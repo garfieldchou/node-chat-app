@@ -11,6 +11,11 @@ function scrollToBottom() {
   var newMessageHeight = newMessage.innerHeight();
   var lastMessageHeight = newMessage.prev().innerHeight();
 
+  console.log('scrollHeight in scrollToBottom: ' + scrollHeight);
+  console.log('cH + sT: ', clientHeight + scrollTop);
+  console.log('cH + sT + nMh: ', clientHeight + scrollTop + newMessageHeight);
+  console.log('cH + sT + nMh + lMh : ', clientHeight + scrollTop + newMessageHeight + lastMessageHeight);
+
   if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight  >= scrollHeight) {
     messages.scrollTop(scrollHeight);
   }
@@ -34,6 +39,7 @@ socket.on('newMessage', function(message) {
   });
 
   jQuery('#messages').append(html);
+  console.log('before scrollToBottom:' + jQuery('#messages').prop('scrollHeight'));
   scrollToBottom();
 });
 
