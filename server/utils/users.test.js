@@ -34,10 +34,38 @@ describe('Users', () => {
     expect(users.users).toEqual([user]);
   });
 
+  it('should remove a user', () => {
+
+  });
+
+  it('should not remove  user', () => {
+
+  });
+
+  it('should find user', () => {
+    var userId = '2';
+    var user = users.getUser(userId);
+
+    expect(user.id).toBe(userId);
+  });
+
+  it('should not find user', () => {
+    var userId = '99';
+    var user = users.getUser(userId);
+
+    expect(user).toNotExist();
+  });
+
   it('should return names for Node course', () => {
     var userList = users.getUserList('Node Course');
 
     expect(userList).toEqual(['Mike', 'Julie']);
+  });
+
+  it('should return names for React course', () => {
+    var userList = users.getUserList('React Course');
+
+    expect(userList).toEqual(['Jen']);
   });
 
 });
